@@ -1,12 +1,12 @@
 import {
-  CountryCode,
   Country,
-  TranslationLanguageCode,
-  TranslationLanguageCodeMap,
-  FlagType,
+  CountryCode,
   CountryCodeList,
+  FlagType,
   Region,
   Subregion,
+  TranslationLanguageCode,
+  TranslationLanguageCodeMap,
 } from './types'
 import Fuse from 'fuse.js'
 
@@ -154,7 +154,7 @@ export const getCountriesAsync = async (
     .filter(isSubregion(subregion))
     .filter(isIncluded(countryCodes))
     .filter(isExcluded(excludeCountries))
-    
+
     return countries
 
   } else {
@@ -200,12 +200,16 @@ export const search = (
   if (data.length === 0) {
     return []
   }
+
   if (!fuse) {
     fuse = new Fuse<Country>(data, options)
   }
-  if (filter && filter !== '') {
-    const result = fuse.search(filter)
-    return result
+
+  const formattedFilter = filter.replace('+', '').trim()
+  if (formattedFilter && formattedFilter !== '') {
+    return fuse.search(formattedFilter).sort((country1: Country, country2: Country) =>
+      (country1.name as string).localeCompare(country2.name as string),
+    )
   } else {
     return data
   }

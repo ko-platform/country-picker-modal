@@ -7,7 +7,7 @@ export const DEFAULT_THEME = {
   primaryColorVariant: '#eee',
   backgroundColor: '#ffffff',
   onBackgroundTextColor: '#000000',
-  fontSize: 16,
+  fontSize: 14,
   fontFamily: Platform.select({
     ios: 'System',
     android: 'Roboto',

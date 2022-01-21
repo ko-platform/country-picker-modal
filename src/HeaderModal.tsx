@@ -13,10 +13,14 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center'
-  }
+  },
+  reverse: {
+    flexDirection: 'row-reverse'
+  },
 })
 
 interface HeaderModalProps {
+  inverseHeaderOrder?: boolean
   withFilter?: boolean
   withCloseButton?: boolean
   closeButtonImage?: ImageSourcePropType
@@ -27,6 +31,7 @@ interface HeaderModalProps {
 }
 export const HeaderModal = (props: HeaderModalProps) => {
   const {
+    inverseHeaderOrder,
     withFilter,
     withCloseButton,
     closeButtonImage,
@@ -36,7 +41,7 @@ export const HeaderModal = (props: HeaderModalProps) => {
     renderFilter
   } = props
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, inverseHeaderOrder && styles.reverse]}>
       {withCloseButton && <CloseButton
         image={closeButtonImage}
         style={closeButtonStyle}

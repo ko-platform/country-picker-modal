@@ -162,7 +162,7 @@ const keyExtractor = (item: Country) => item.cca2
 const ItemSeparatorComponent = () => {
   const { primaryColorVariant } = useTheme()
   return (
-    <View style={[styles.sep, { borderBottomColor: primaryColorVariant }]} />
+    <View style={[styles.sep, { borderBottomWidth: 0.5, borderBottomColor: primaryColorVariant }]} />
   )
 }
 

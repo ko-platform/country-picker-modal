@@ -5,7 +5,8 @@ import { useTheme } from './CountryTheme'
 const styles = StyleSheet.create({
   input: {
     height: 48,
-    width: '70%',
+    flex: 1,
+    paddingLeft: 8,
     ...Platform.select({
       web: {
         outlineWidth: 0,
