@@ -1,12 +1,12 @@
 {
-  "name": "react-native-country-picker-modal",
-  "version": "2.0.0",
+  "name": "@ko-platform/country-picker-modal",
+  "version": "0.0.1",
   "description": "react-native country picker",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xcarpentier/react-native-country-picker-modal.git"
+    "url": "git+https://github.com/ko-platform/image-editor.git"
   },
   "scripts": {
     "start": "yarn config:dev && expo start",
@@ -38,12 +38,9 @@
     "country",
     "flag"
   ],
-  "author": "Xavier Carpentier <xcapetir@gmail.com> (https://xaviercarpentier.com/)",
+  "author": "adscud",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/xcarpentier/react-native-country-picker-modal/issues"
-  },
-  "homepage": "http://xcarpentier.github.io/react-native-country-picker-modal",
+  "homepage": "https://github.com/ko-platform/image-editor",
   "dependencies": {
     "@callstack/react-theme-provider": "3.0.3",
     "fuse.js": "3.4.5",
