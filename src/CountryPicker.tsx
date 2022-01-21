@@ -51,6 +51,7 @@ interface CountryPickerProps {
   modalProps?: ModalProps
   filterProps?: CountryFilterProps
   flatListProps?: FlatListProps<Country>
+  inverseHeaderOrder?: boolean
   withEmoji?: boolean
   withCountryNameButton?: boolean
   withCurrencyButton?: boolean
@@ -70,10 +71,15 @@ interface CountryPickerProps {
   closeButtonImage?: ImageSourcePropType
   closeButtonStyle?: StyleProp<ViewStyle>
   closeButtonImageStyle?: StyleProp<ImageStyle>
+
   renderFlagButton?(props: FlagButton['props']): ReactNode
+
   renderCountryFilter?(props: CountryFilter['props']): ReactNode
+
   onSelect(country: Country): void
+
   onOpen?(): void
+
   onClose?(): void
 }
 
@@ -90,6 +96,7 @@ export const CountryPicker = (props: CountryPickerProps) => {
     modalProps,
     flatListProps,
     onSelect,
+    inverseHeaderOrder,
     withEmoji,
     withFilter,
     withCloseButton,
@@ -178,8 +185,10 @@ export const CountryPicker = (props: CountryPickerProps) => {
     )
       .then(countries => cancel ? null : setCountries(countries))
       .catch(console.warn)
-    
-    return () => cancel = true
+
+    return () => {
+      cancel = true
+    }
   }, [translation, withEmoji])
 
   return (
@@ -198,6 +207,7 @@ export const CountryPicker = (props: CountryPickerProps) => {
             closeButtonImageStyle,
             closeButtonStyle,
             withCloseButton,
+            inverseHeaderOrder,
           }}
           renderFilter={(props: CountryFilter['props']) =>
             renderFilter({
