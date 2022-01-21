@@ -1,6 +1,6 @@
 {
   "name": "@ko-platform/country-picker-modal",
-  "version": "0.0.14",
+  "version": "1.0.0",
   "description": "react-native country picker",
   "main": "node_modules/expo/AppEntry.js",
   "types": "lib/index.d.ts",
